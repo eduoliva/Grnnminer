@@ -1,0 +1,10 @@
+DeltaT: 2
+Repetitions: 10
+HiddenUnits: 5
+Epochs: 50
+NeuralNetwork: MLP
+Threshold: on
+Theta: 5
+Simetric: on
+Unchained: on
+

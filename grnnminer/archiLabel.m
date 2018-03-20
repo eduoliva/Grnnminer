@@ -1,0 +1,19 @@
+function[] = archiLabel(dataFile,sessionId)
+archi=csvread(dataFile);
+[M,N]=size(archi);
+
+nameaux=strcat(sessionId,'_LabelsPredeterminadas.csv');
+ruta=pwd;
+nameArch=[ruta '/LabelPredeterminadas/' nameaux];
+
+fid = fopen(nameArch, 'w');
+
+for i = 1:N
+    fprintf(fid,['Gene ' num2str(i)]);
+      if i<(N)
+        fprintf(fid,',');
+      end;
+end;
+
+fclose(fid);
+end

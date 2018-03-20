@@ -1,0 +1,713 @@
+
+/*body{background: url('./images/backgroundgris.jpeg') no-repeat fixed center top;}*/
+/*body{color: #000000; background-color: #fafafa}*/
+
+#mynetwork {
+    width: 68%;
+    height: 45.5%;
+    border: 1px solid lightgray;
+    border-radius:5px;
+    box-shadow:0px 0px 2px black;
+    position: absolute;
+    left:30%;
+    top:5%;
+}
+
+@-moz-document url-prefix() {
+    #mynetwork {
+        width: 68%;
+        height: 45.5%;
+        border: 1px solid lightgray;
+        border-radius:5px;
+        box-shadow:0px 0px 2px black;
+        position: absolute;
+        left:30%;
+        top:5%;
+    }
+}
+
+@media (min-width: 1800px) {
+#mynetwork {
+    width: 68%;
+    height: 46.5%;
+    border: 1px solid lightgray;
+    border-radius:5px;
+    box-shadow:0px 0px 2px black;
+    position: absolute;
+    left:30%;
+    top:4%;
+}
+}
+
+@media (min-width: 1800px) {
+@-moz-document url-prefix() {
+    #mynetwork {
+        width: 68%;
+        height: 46.5%;
+        border: 1px solid lightgray;
+        border-radius:5px;
+        box-shadow:0px 0px 2px black;
+        position: absolute;
+        left:30%;
+        top:4%;
+    }
+}
+}
+#pholder {
+    width: 68%;
+    height: 45.5%;
+    border: 1px solid lightgray;
+    border-radius:5px;
+    box-shadow:0px 0px 2px black;
+    position: absolute;
+    left:30%;
+    top:51.5%;
+}
+
+@-moz-document url-prefix() {
+        #pholder {
+        width: 68%;
+        height: 45.5%;
+        border: 1px solid lightgray;
+        border-radius:5px;
+        box-shadow:0px 0px 2px black;
+        position: absolute;
+        left:30%;
+        top:51.5%;
+    }
+}
+
+#contenedor{
+    width:50%; 
+    height:50%;
+    position: absolute;
+    left:1.5%;
+    top:5%;
+    border: 1px solid lightgray;
+    box-shadow:0px 0px 1px black;
+    border-radius:5px;
+}
+@-moz-document url-prefix() {
+    #contenedor{
+    width:50%; 
+    height:50%;
+    position: absolute;
+    left:1.5%;
+    top:8%;
+    border: 1px solid lightgray;
+    box-shadow:0px 0px 1px black;
+    border-radius:5px;
+}
+}
+
+  #pestanas{
+    position: absolute;
+    left:1%;
+    top:2.5%;
+    
+}
+
+@media (min-width: 1600px) {
+    #pestanas{
+        position: absolute;
+        left:1%;
+        top:3.2%;
+    }
+}
+
+
+@-moz-document url-prefix() {
+    #pestanas{
+    position: absolute;
+    left:1%;
+    top:2.5%;
+    
+}
+}
+
+@media (min-width: 1600px) {
+    @-moz-document url-prefix() {
+        #pestanas{
+        position: absolute;
+        left:1%;
+        top:3%;
+        }
+    }
+}
+
+
+#pestanas li{
+    list-style-type: none;
+    float: left;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border: 2px solid lightgray;
+    border-bottom: black;
+    padding: 0px 20px 0px 20px;
+}
+
+@-moz-document url-prefix() {
+#pestanas li{
+    list-style-type: none;
+    float: left;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border: 2px solid lightgray;
+    border-bottom: black;
+    padding: 0px 20px 0px 20px;
+    
+}
+}
+
+#pestanas a:link{/*color del link*/
+    text-decoration: none;
+    font-family: Arial;
+    color:#000000;
+    font-size: 80%;
+}
+
+@-moz-document url-prefix() {
+#pestanas a:link{/*color del link*/
+    text-decoration: none;
+    font-family: Arial;
+    color:#000000;
+    font-size: 80%;
+}
+}
+
+
+#optionData{ /* armo el cuadro de DATA*/
+    width:27.7%; 
+    height:19%;
+    position: absolute;
+    left:1.5%;
+    top:8%;
+    border: 1px solid lightgray;
+    box-shadow:0px 0px 1px black;
+    border-radius:5px;
+}
+
+@media (min-width: 1800px) {
+#optionData{ /* armo el cuadro de DATA*/
+    width:27.7%; 
+    height:20%;
+    position: absolute;
+    left:1.5%;
+    top:7%;
+    border: 1px solid lightgray;
+    box-shadow:0px 0px 1px black;
+    border-radius:5px;
+    }
+}
+
+@-moz-document url-prefix() {
+    #optionData{ /* armo el cuadro de DATA*/
+        width:27.7%; 
+        height:19%;
+        position: absolute;
+        left:1.5%;
+        top:8%;
+        border: 1px solid lightgray;
+        box-shadow:0px 0px 1px black;
+        border-radius:5px;
+    }
+}
+
+@media (min-width: 1800px) {
+	@-moz-document url-prefix() {
+	    #optionData{ /* armo el cuadro de DATA*/
+		width:27.7%; 
+		height:20%;
+		position: absolute;
+		left:1.5%;
+		top:7%;
+		border: 1px solid lightgray;
+		box-shadow:0px 0px 1px black;
+		border-radius:5px;
+	    }
+	}
+}
+
+#optionSimulated{ /* armo el cuadro de SIMULATED GRN*/
+    width:27.7%; 
+    height:19%;
+    position: absolute;
+    left:1.5%;
+    top:8%;
+    border: 1px solid lightgray;
+    box-shadow:0px 0px 1px black;
+    border-radius:5px;
+    /*border-top: 1px solid lightgray;*/
+}
+
+@-moz-document url-prefix() {
+    #optionSimulated{ /* armo el cuadro de SIMULATED GRN*/
+        width:27.7%; 
+        height:19%;
+        position: absolute;
+        left:1.5%;
+        top:8%;
+        border: 1px solid lightgray;
+        box-shadow:0px 0px 1px black;
+        border-radius:5px;
+        /*border-top: 1px solid lightgray;*/
+    }
+}
+
+@media (min-width: 1800px) {
+#optionSimulated{ /* armo el cuadro de SIMULATED GRN*/
+    width:27.7%; 
+    height:20%;
+    position: absolute;
+    left:1.5%;
+    top:7%;
+    border: 1px solid lightgray;
+    box-shadow:0px 0px 1px black;
+    border-radius:5px;
+    /*border-top: 1px solid lightgray;*/
+}
+}
+
+@media (min-width: 1800px) {
+@-moz-document url-prefix() {
+    #optionSimulated{ /* armo el cuadro de SIMULATED GRN*/
+        width:27.7%; 
+        height:20%;
+        position: absolute;
+        left:1.5%;
+        top:7%;
+        border: 1px solid lightgray;
+        box-shadow:0px 0px 1px black;
+        border-radius:5px;
+        /*border-top: 1px solid lightgray;*/
+    }
+}
+}
+
+#optionLabel{ /* armo el cuadro de LABEL*/
+    width:27.7%; 
+    height:8%;
+    position: absolute;
+    left:1.5%;
+    top:28%;
+    border: 1px solid lightgray;
+    box-shadow:0px 0px 1px black;
+    border-radius:5px;
+    /*border-top: 1px solid lightgray;*/
+}
+
+@-moz-document url-prefix() {
+    #optionLabel{ /* armo el cuadro de LABEL*/
+        width:27.7%; 
+        height:8%;
+        position: absolute;
+        left:1.5%;
+        top:28%;
+        border: 1px solid lightgray;
+        box-shadow:0px 0px 1px black;
+        border-radius:5px;
+        /*border-top: 1px solid lightgray;*/
+    }
+}
+#optionParameters{ /* armo el cuadro de PARAMETERS*/
+    width:27.7%; 
+    height:60.1%;
+    position: absolute;
+    left:1.5%;
+    top:36.9%;
+    border: 1px solid lightgray;
+    box-shadow:0px 0px 1px black;
+    border-radius:5px;
+    /*border-top: 1px solid lightgray;*/
+}
+
+@-moz-document url-prefix() {
+    #optionParameters{ /* armo el cuadro de PARAMETERS*/
+        width:27.7%; 
+        height:60.1%;
+        position: absolute;
+        left:1.5%;
+        top:36.9%;
+        border: 1px solid lightgray;
+        box-shadow:0px 0px 1px black;
+        border-radius:5px;
+        /*border-top: 1px solid lightgray;*/
+    }
+}
+#optionRules{ /* armo el cuadro de RULES*/
+    width:27.7%; 
+    height:4.5%;
+    position: absolute;
+    left:25%;
+    top:92%;
+   
+    /*border-top: 1px solid lightgray;*/
+}
+
+@-moz-document url-prefix() {
+    #optionRules{ /* armo el cuadro de RULES*/
+        width:27.7%; 
+        height:4.5%;
+        position: absolute;
+        left:24%;
+        top:91.5%;
+       
+        /*border-top: 1px solid lightgray;*/
+    }
+}
+
+#espera{ /* armo el cuadro de RULES*/
+    width:6%; 
+    height:8%;
+    position: absolute;
+    left:22%;
+    top:18%;
+    /*border-top: 1px solid lightgray;*/
+}
+
+@-moz-document url-prefix() {
+    #espera{ /* armo el cuadro de RULES*/
+    width:6%; 
+    height:8%;
+    position: absolute;
+    left:22%;
+    top:18%;
+    /*border-top: 1px solid lightgray;*/
+}
+    
+}
+
+#respuestaData{ /* armo el cuadro de RULES*/
+    width:27.7%; 
+    height:19%;
+    position: absolute;
+    left:1.5%;
+    top:8%;
+}
+
+@-moz-document url-prefix() {
+    #respuestaData{ /* armo el cuadro de RULES*/
+    width:27.7%; 
+    height:19%;
+    position: absolute;
+    left:1.5%;
+    top:8%;
+}
+    
+}
+
+#respuestaTarget{ /* armo el cuadro de RULES*/
+    width:27.7%; 
+    height:19%;
+    position: absolute;
+    left:1.5%;
+    top:8%;
+}
+
+@-moz-document url-prefix() {
+    #respuestaTarget{ /* armo el cuadro de RULES*/
+    width:27.7%; 
+    height:19%;
+    position: absolute;
+    left:1.5%;
+    top:8%;
+}
+    
+}
+
+#respuestaGeneSim{ /* armo el cuadro de RULES*/
+    width:27.7%; 
+    height:19%;
+    position: absolute;
+    left:1.5%;
+    top:8%;
+}
+
+@-moz-document url-prefix() {
+    #respuestaGeneSim{ /* armo el cuadro de RULES*/
+    width:27.7%; 
+    height:19%;
+    position: absolute;
+    left:1.5%;
+    top:8%;
+}
+    
+}
+
+/*fuentes*/
+H1 {font-family:Arial; color:#000000; font-size: 100%;}
+
+@-moz-document url-prefix() {
+H1 {font-family:-moz-arial; color:#000000; font-size: 100%;}
+}
+
+@media (min-width: 1600px) { /* sirve para las distintas resoluciones*/
+H1 {font-family:Arial; color:#000000; font-size: 130%;margin-top: -0.2%;}}
+
+@media (min-width: 1600px) { /* sirve para las distintas resoluciones*/
+@-moz-document url-prefix() {
+H1 {font-family:-moz-arial; color:#000000; font-size: 130%;margin-top: -0.2%;}
+}
+}
+
+
+p {
+font-family: Arial;
+font-size: 65%;
+line-height: 0.4%;   /*esta es la propiedad para el interlineado*/
+color:#000000;
+margin-top: -1%;
+}
+
+@-moz-document url-prefix() {
+    p {
+    font-family: Arial;
+    font-size: 65%;
+    line-height: -0.5%;   /*esta es la propiedad para el interlineado*/
+    color:#000000;
+    margin-top: -2%;
+    }
+}
+
+@media (min-width: 1600px) { /* sirve para las distintas resoluciones*/
+    p {
+    font-family: Arial;
+    font-size: 85%;
+    line-height: 10%;   /*esta es la propiedad para el interlineado*/
+    color:#000000;
+    margin-top: 0%;
+    }
+}
+
+@media (min-width: 1600px) { /* sirve para las distintas resoluciones*/
+    @-moz-document url-prefix() {
+        p {
+        font-family: Arial;
+        font-size: 85%;
+        line-height: 10%;   /*esta es la propiedad para el interlineado*/
+        color:#000000;
+        margin-top: 0%;
+        }
+    }
+}
+
+p2 {
+font-family: Arial;
+font-size: 65%;
+line-height: 1%;   /*esta es la propiedad para el interlineado*/
+color:#000000;
+margin-top: -1.8%;
+
+}
+
+@-moz-document url-prefix() {
+    p2 {
+    font-family: Arial;
+    font-size: 65%;
+    line-height: 0.2%;   /*esta es la propiedad para el interlineado*/
+    color:#000000;
+    margin-top: -2.2%;
+    }
+}
+
+@media (min-width: 1600px) { /* sirve para las distintas resoluciones*/
+    p2 {
+        font-family: Arial;
+        font-size: 85%;
+        line-height: 0.2%;   /*esta es la propiedad para el interlineado*/
+        color:#000000;
+        margin-top: -2.2%;
+    }
+}
+
+@media (min-width: 1600px) { 
+    @-moz-document url-prefix() {/* sirve para las distintas resoluciones*/
+        p2 {
+            font-family: Arial;
+            font-size: 85%;
+            line-height: 0.2%;   /*esta es la propiedad para el interlineado*/
+            color:#000000;
+            margin-top: -2.2%;
+        }
+    }
+}
+
+
+h2 {
+font-family: Arial;
+font-size: 100%;
+line-height: 2%;   /*esta es la propiedad para el interlineado*/
+color:#000000;
+margin-left: -1.8%;
+margin-top: 2%;
+
+}
+
+@-moz-document url-prefix() {
+    h2 {
+        font-family: -moz-arial;
+        font-size: 75%;
+        line-height: 0.5%;   /*esta es la propiedad para el interlineado*/
+        color:#000000;
+        margin-top: 0%;
+        margin-left: -1.8%;
+    }
+}
+
+@media (min-width: 1600px) { 
+    h2 {
+    font-family: Arial;
+    font-size: 110%;
+    line-height: 2%;   /*esta es la propiedad para el interlineado*/
+    color:#000000;
+    margin-left: -1.8%;
+    margin-top: 2%;
+    }
+}
+
+@media (min-width: 1600px) { 
+    @-moz-document url-prefix() {
+        h2 {
+            font-family: -moz-arial;
+            font-size: 110%;
+            line-height: 2%;   /*esta es la propiedad para el interlineado*/
+            color:#000000;
+            margin-top: 4%;
+            margin-left: -1.8%;
+        }
+    }
+}
+
+
+h3 {
+font-family: Arial;
+font-size: 65%;
+line-height: 1.5%;   /*esta es la propiedad para el interlineado*/
+color:#000000;
+margin-top: -1%;
+
+}
+
+@media (min-width: 1600px) {
+    h3 {
+    font-family: Arial;
+    font-size: 65%;
+    line-height: 1.5%;   /*esta es la propiedad para el interlineado*/
+    color:#000000;
+    margin-top: 1%;
+    }
+}
+
+@-moz-document url-prefix() {
+    h3 {
+        font-family: Arial;
+        font-size: 65%;
+        line-height: 0.5%;   /*esta es la propiedad para el interlineado*/
+        color:#000000;
+        margin-top: -2%;
+    }
+}
+
+@media (min-width: 1600px) {
+    @-moz-document url-prefix() {
+        h3 {
+            font-family: Arial;
+            font-size: 65%;
+            line-height: 1.5%;   /*esta es la propiedad para el interlineado*/
+            color:#000000;
+            margin-top: 2%;
+        }
+    }
+}
+
+H4 {font-family:Arial; color:#222222; font-size: 100%;line-height: 1%;margin-top: 3%;}
+
+@-moz-document url-prefix() {
+    H4 {font-family:-moz-arial; color:#222222; font-size: 75%;line-height: 3%;margin-top: 3%;}
+}
+
+@media (min-width: 1600px) { 
+H4 {font-family:Arial; color:#222222; font-size: 110%;line-height: 1%;margin-top: 3%;}}
+
+@media (min-width: 1600px) {
+@-moz-document url-prefix() {
+    H4 {font-family:-moz-arial; color:#222222; font-size: 110%;line-height: 3%;margin-top: 3%;}
+ }
+}
+
+p3{font-family: Arial;line-height: 0.5%;line-height:0.5%; font-size: 65%;color:#000000;margin-top: -1.8%;}
+
+@-moz-document url-prefix() {
+   p3{font-family: Arial;line-height: 0.5%;line-height: 0.5%; font-size: 65%;color:#000000;margin-top: -1.8%;}
+}
+
+h5 {
+font-family: Arial;
+font-size: 65%;
+line-height: 1%;   /*esta es la propiedad para el interlineado*/
+color:#000000;
+margin-top: -4%;
+
+}
+
+@media (min-width: 1600px) {
+    h5 {
+    font-family: Arial;
+    font-size: 65%;
+    line-height: 1.5%;   /*esta es la propiedad para el interlineado*/
+    color:#000000;
+    margin-top: -3%;
+    }
+}
+
+@-moz-document url-prefix() {
+    h5 {
+        font-family: Arial;
+        font-size: 65%;
+        line-height: 0.5%;   /*esta es la propiedad para el interlineado*/
+        color:#000000;
+        margin-top: -4.5%;
+    }
+}
+
+@media (min-width: 1600px) {
+    @-moz-document url-prefix() {
+        h5 {
+            font-family: Arial;
+            font-size: 65%;
+            line-height: 1.5%;   /*esta es la propiedad para el interlineado*/
+            color:#000000;
+            margin-top: -3%;
+        }
+    }
+}
+
+a{
+font-family: Arial;
+font-size: 75%;
+line-height: 1%;   /*esta es la propiedad para el interlineado*/
+margin-top: -1%;
+
+}
+
+@-moz-document url-prefix() {
+    a{
+        font-family: Arial;
+        font-size: 65%;
+        line-height: 0.5%;   /*esta es la propiedad para el interlineado*/
+        margin-top: -2%;
+    }
+}
+
+@media (min-width: 1600px) {
+    @-moz-document url-prefix() {
+        a{
+            font-family: Arial;
+            font-size: 75%;
+            line-height: 0.5%;   /*esta es la propiedad para el interlineado*/
+            margin-top: -2%;
+        }   
+    }
+}

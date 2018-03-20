@@ -1,0 +1,70 @@
+﻿Para configurar un contenedor debo crear la imagen que la realizo con el Dockerfile.
+
+El Dockerfile es el siguiente:
+
+FROM ubuntu:14.04
+
+MAINTAINER EduFich <edumoliva@hotmail.com>
+
+RUN apt-get update
+RUN apt-get install -y apache2
+RUN apt-get install -y php5 php5-common php5-cli php5-mysql php5-curl 
+
+# Install base packages
+RUN DEBIAN_FRONTEND=noninteractive \
+    dpkg --add-architecture i386 && \
+    apt-get update && apt-get install -y --no-install-recommends \
+      libxt6 \
+      libxmu6 \
+      libxp6 \
+      libxtst6 \
+      build-essential \
+      gfortran \
+      gcc \
+      g++ \
+      libc6:i386 libncurses5:i386 libstdc++6:i386 \
+      imagemagick \
+      ghostscript \
+      xorg && \
+    rm -rf /var/lib/apt/lists/*
+
+
+COPY index.php /var/www/html/
+VOLUME /var/www/html
+COPY grnnminer /var/www/html/
+
+# Create a new user "developer".
+# It will get access to the X11 session in the host computer
+
+ENV uid=1000
+ENV gid=${uid}
+
+COPY create_user.sh /
+COPY run.sh /
+COPY sumdos.m /
+COPY grnnminer /
+
+EXPOSE  80
+
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+
+
+Luego de esto debo crear la imagen
+docker build -t grnnmier /home/miproyecto
+
+Para eso debo meter dentro de /home/miproyecto el Dockerfile y cualquier archivo que quiera meter dentro de la imagen.
+
+Luego debo comenzar a correr el contenedor:
+docker run -ti 8080:80 -v /opt/lampp/htdocs/grnnminer:/var/www/html -v /usr/local/MATLAB/R2014b/:/MATLAB \grnnminer
+
+o en una maquina ya con los datos de minner incorporado, por ejemplo llamada milampp:
+
+docker run -d -p 8080:80 -v /usr/local/MATLAB/R2014b/:/MATLAB \grnnminer
+
+Finalmente pruebo que funcione en localhost:8080/index.php
+
+Para acceder al contenedor con cmd y ver los datos:
+
+docker exec -ti idcontenedor /bin/bash
+
+Para ejecutar Matlab: ,/run.sh “funcionaMatlab”

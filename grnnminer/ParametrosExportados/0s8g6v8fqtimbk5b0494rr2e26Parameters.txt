@@ -1,0 +1,12 @@
+TimeStamps: 10
+Realizations: 1
+DeltaT: 2
+Repetitions: 10
+HiddenUnits: 5
+Epochs: 50
+NeuralNetwork: ELM
+Threshold: on
+Theta: 5
+Simetric: on
+Unchained: on
+

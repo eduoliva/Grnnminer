@@ -1,0 +1,10 @@
+DeltaT: 3
+Repetitions: 11
+HiddenUnits: 5
+Epochs: 50
+NeuralNetwork: ELM
+Threshold: off
+Theta: 0
+Simetric: off
+Unchained: on
+

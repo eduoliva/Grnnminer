@@ -1,0 +1,12 @@
+10 Time Stamp
+1 Realization
+3 Delta
+11
+5
+50
+ELM Neural Network
+on
+5
+on
+on
+

@@ -1,0 +1,6 @@
+Rules
+Threshold: on
+Theta: 5
+Simetric: on
+Unchained: on
+

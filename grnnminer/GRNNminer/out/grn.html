@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+    <head>
+        <title>Discovered GRN</title>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="d3.v3.min.js"></script>
+<style>
+svg{
+  background: #EEE;
+  margin: 0 auto;
+}
+.node.fixed {
+  fill: #000;
+}
+.substrate {
+  fill: none;
+  stroke: #666;
+  stroke-width: 2px;
+}
+.product {
+  fill: none;
+  stroke: #999;
+  stroke-width: 2px;
+  stroke-dasharray: 3,3;
+}
+.available {
+  fill: #00C618;
+  stroke: #008110;
+  stroke-width: 1.5px;
+}
+.source {
+  fill: #FF8673;
+  stroke: #FF2300;
+  stroke-width: 1.5px;
+}
+.target {
+  fill: #FFF273;
+  stroke: #FFCA00;
+  stroke-width: 1.5px;
+}
+.compound {
+  fill: #5DC8CD;
+  stroke: #006064;
+  stroke-width: 1.5px;
+}
+.external {
+  fill: #9F3ED5;
+  stroke: #48036F;
+  stroke-width: 1.5px;
+}
+.reaction {
+  fill: #1B1BB3;
+  stroke: #006064;
+  stroke-width: 1.5px;
+}
+text {
+  fill: #000;
+  font: 12px arial;
+  pointer-events: none;
+  background-color: #159;
+}
+</style>
+    </head>
+
+    <body>
+    <noscript>
+    Para utilizar las funcionalidades completas de este sitio es necesario tener
+    JavaScript habilitado. Aquí están las <a href="http://www.enable-javascript.com/es/"
+    target="_blank"> instrucciones para habilitar JavaScript en tu navegador web</a>.
+    </noscript>
+
+    <script type="text/javascript">
+json = {
+	"nodes": [
+		{
+    			"name": "g1",
+    			"label": "CBF1",
+    			"class": "compound"
+		},
+		{
+    			"name": "g2",
+    			"label": "GAL4",
+    			"class": "compound"
+		},
+		{
+    			"name": "g3",
+    			"label": "SWI5",
+    			"class": "compound"
+		},
+		{
+    			"name": "g4",
+    			"label": "GAL80",
+    			"class": "compound"
+		},
+		{
+    			"name": "g5",
+    			"label": "ASH1",
+    			"class": "compound"
+		},
+	],
+	"links": [
+		{
+    			"source": "g1",
+    			"target": "g3",
+    			"class": "substrate"
+		},
+		{
+    			"source": "g2",
+    			"target": "g4",
+    			"class": "substrate"
+		},
+		{
+    			"source": "g3",
+    			"target": "g2",
+    			"class": "substrate"
+		},
+		{
+    			"source": "g3",
+    			"target": "g5",
+    			"class": "substrate"
+		},
+		{
+    			"source": "g5",
+    			"target": "g1",
+    			"class": "substrate"
+		},
+	],
+	"Nnodes": 5,
+	"Nlinks": 5
+}
+var w = window,
+    d = document,
+    e = d.documentElement,
+    g = d.getElementsByTagName('body')[0],
+    x = w.innerWidth || e.clientWidth || g.clientWidth,
+    y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+var width = 0.99*x;
+var height = 0.96*y;
+d3.select("#layout").remove();
+
+var svg = d3.select("body").append("svg")
+		.attr("id","layout")
+		.attr("display","block")
+		.attr("margin","auto")
+		.attr("width", width)
+		.attr("height", height);
+var force = d3.layout.force()
+			 .gravity(.005)
+			 .distance(50)
+			 .charge(-200)
+			 .size([width, height]);
+    function dragstart(d) {
+			    d.fixed = true;
+			    d3.select(this).classed("fixed", true);
+			  }
+		function findById(source, name)
+		{
+		    for (var ii = 0; ii < source.length; ii++)
+		    {
+			if (source[ii].name === name)
+			{
+			    return ii;
+			}
+		    }
+		}
+		// build the arrow.
+		var marker = svg.append("defs").selectAll("marker")
+				.data(["substrate","product"])
+				.enter()
+				.append("marker")
+				.attr("id", String)
+				.attr("viewBox", "0 -5 10 10")
+				.attr("refX", function(d){ if(d == "substrate"){ return 24; } else{ return 19; }})
+				.attr("refY", 0)
+				.attr("markerWidth", 6)
+				.attr("markerHeight", 6)
+				.attr("orient", "auto")
+				.append("path")
+				.attr("d", "M0,-5L10,0L0,5");
+		// REPLACE NAMES by IDs
+		for (var ii = 0; ii < json.links.length; ii++)
+		{
+		    json.links[ii].source = findById(json.nodes,json.links[ii].source);
+		    json.links[ii].target = findById(json.nodes,json.links[ii].target);
+		}
+		force.nodes(json.nodes)
+		     .links(json.links)
+		     .start();
+		var link = svg.selectAll(".link")
+			      .data(json.links)
+			      .enter()
+			      .append("line")
+			      .attr("class", function(d){return d.class;})
+			      .attr("marker-end", function(d){return "url(#" + d.class + ")";});
+		var node = svg.selectAll(".node")
+			      .data(json.nodes)
+			      .enter()
+			      .append("g")
+			      .call(force.drag().on("dragstart", dragstart));
+		node.append("circle")
+		    .attr("r", 10)
+		    .attr("class", function(d){return d.class;});
+		svg.selectAll("circle").attr("r",function(d){if (d.class == "reaction"){return 15;}else{return 10;}});
+		node.append("text")
+		    .attr("dx", 15)
+		    .attr("dy", ".45em")
+		    .text(function(d) { return d.label });
+		force.on("tick", function() {
+					      link.attr("x1", function(d) { return d.source.x; })
+						  .attr("y1", function(d) { return d.source.y; })
+						  .attr("x2", function(d) { return d.target.x; })
+						  .attr("y2", function(d) { return d.target.y; });
+					      node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+					    });
+		resize();
+		d3.select(window).on("resize", resize);
+		function resize() {
+				    //width = window.innerWidth, height = window.innerHeight;
+				    svg.attr("width", width).attr("height", height);
+				    force.size([width, height]).resume();
+				  }
+		node.on("dblclick", function(d) {
+						  d3.select(this).classed("fixed", d.fixed = false);
+						});
+		node.on("click", function(d) {
+      // 				        d3.select(this).select("circle")
+      // 					  .attr('fill-opacity', 0.8);
+      // 				        d3.select(this).select("circle")
+      // 				          .classed("fixed", true);
+					});
+		node.on("mouseover", function(d) {
+						    d3.select(this).select("circle")
+						      .transition()
+						      .duration(250)
+						      .attr("r", function(h) {if (h.class == "reaction"){return 20;}else{return 15;}})
+						    //.attr("r", function() {return circ.attr("r") * 1.5;})
+						      .style("stroke-width", "3.5px");
+						    d3.select(this).select("text")
+						      .transition()
+						      .duration(250)
+						      .attr("class", function(d){return d.class;})
+						      .attr("dx", 20);
+						 });
+		node.on("mouseout", function(d) {
+						  d3.select(this).select("circle")
+						    .transition()
+						    .duration(250)
+						    .attr("r", function(h) { if (h.class == "reaction"){return 15;}else{return 10;}})
+						    //.attr("r", function() {return circ.attr("r") / 1.5;})
+						    .style("stroke-width", "1.5px");
+						  d3.select(this).select("text")
+						    .transition()
+						    .duration(250)
+						    .attr("class", "text")
+						    .attr("dx", 15);
+						 });
+    </script>
+
+</body>
+</html>
